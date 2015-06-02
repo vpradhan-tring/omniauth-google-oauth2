@@ -46,6 +46,7 @@ module OmniAuth
           params['openid.realm'] = params.delete(:openid_realm) unless params[:openid_realm].nil?
 
           session['omniauth.state'] = params[:state] if params[:state]
+          session['omniauth.scope'] = request.params["scope"]
         end
       end
 
