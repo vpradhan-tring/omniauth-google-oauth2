@@ -39,7 +39,7 @@ module OmniAuth
           when "calendar"
             params[:scope] += ' calendar'
           when "gmail"
-            params[:scope] += ' gmail.readonly gmail.compose'
+            params[:scope] += ' gmail.readonly gmail.compose https://mail.google.com/'
           end
 
           params[:access_type] = 'offline' if params[:access_type].nil?
