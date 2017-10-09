@@ -35,10 +35,10 @@ module OmniAuth
 
           params[:scope] = get_scope(params)
 
-          case request.params["scope"]
-          when "calendar"
+          case request.params['scope']
+          when 'calendar'
             params[:scope] += ' calendar'
-          when "gmail"
+          when 'gmail'
             params[:scope] += ' gmail.readonly gmail.compose https://mail.google.com/'
           end
 
@@ -46,7 +46,7 @@ module OmniAuth
           params['openid.realm'] = params.delete(:openid_realm) unless params[:openid_realm].nil?
 
           session['omniauth.state'] = params[:state] if params[:state]
-          session['omniauth.scope'] = request.params["scope"]
+          session['omniauth.scope'] = request.params['scope']
         end
       end
 
